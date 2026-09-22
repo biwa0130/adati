@@ -25,8 +25,8 @@ handler = WebhookHandler(CHANNEL_SECRET)
 # --- 文章生成（マルコフ連鎖等のベース） ---
 def generate_text():
     try:
-        # MeCabの初期化（エラーを回避するため引数なしでテスト）
-        tagger = MeCab.Tagger("-Owakati")
+        # mecabrcの設定ファイルエラーを回避するため -r /dev/null を指定
+        tagger = MeCab.Tagger("-r /dev/null -Owakati")
         
         # ※ ここにマルコフ連鎖で文章を生成する処理を入れます
         texts = [
